@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="br -pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Criar Formulário</title>
+</head>
+<body>
+    <h1>Criação de Formulários</h1>
+    <form action="{{ url_for('create_form') }}" method="POST">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" maxlength="200" required><br><br>
+
+        <label for="description">Descrição:</label>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <div id="questions">
+            <h2>Perguntas:</h2>
+            <!-- Aqui será adicionado dinamicamente perguntas via JavaScript -->
+        </div>
+
+        <button type="button" onclick="addQuestion()">Adicionar Pergunta</button><br><br>
+        <button type="submit">Criar Formulário</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
